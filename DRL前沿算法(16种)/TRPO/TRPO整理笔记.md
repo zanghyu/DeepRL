@@ -61,17 +61,27 @@ Policy optimization主要分为两个方面：
 
 ### 记号
 
-$$Q_{\pi}\left(s_{t}, a_{t}\right)=\mathbb{E}_{s_{t+1}, a_{t+1}, \ldots}\left[\sum_{l=0}^{\infty} \gamma^{\prime} r\left(s_{t+l}\right)\right]$$
+$$
+Q_{\pi}\left(s_{t}, a_{t}\right)=\mathbb{E}_{s_{t+1}, a_{t+1}, \ldots}\left[\sum_{l=0}^{\infty} \gamma^{\prime} r\left(s_{t+l}\right)\right]
+$$
 
-$$V_{\pi}\left(s_{t}\right)=\mathbb{E}_{a_{t}, s_{t+1}, \cdots}\left[\sum_{l=0}^{\infty} \gamma^{\prime} r\left(s_{t+l}\right)\right]$$ 
+$$
+V_{\pi}\left(s_{t}\right)=\mathbb{E}_{a_{t}, s_{t+1}, \cdots}\left[\sum_{l=0}^{\infty} \gamma^{\prime} r\left(s_{t+l}\right)\right]
+$$ 
 
-$$\begin{aligned} A_{\pi}(s, a)=& Q_{\pi}(s, a)-V_{\pi}(s), \text { where } a_{t} \sim \pi\left(a_{t} | s_{t}\right) \\ s_{t+1} & \sim P\left(s_{t+1} | s_{t}, a_{t}\right) \text { for } t \geq 0 \end{aligned}$$ 
+$$
+\begin{aligned} A_{\pi}(s, a)=& Q_{\pi}(s, a)-V_{\pi}(s), \text { where } a_{t} \sim \pi\left(a_{t} | s_{t}\right) \\ s_{t+1} & \sim P\left(s_{t+1} | s_{t}, a_{t}\right) \text { for } t \geq 0 \end{aligned}
+$$ 
 
-$$\begin{array}{l}{\eta(\pi)=\mathbb{E}_{s_{0}, a_{0}, \ldots}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}\right)\right], \text { where }} \\ {s_{0} \sim \rho_{0}\left(s_{0}\right), a_{t} \sim \pi\left(a_{t} | s_{t}\right), s_{t+1} \sim P\left(s_{t+1} | s_{t}, a_{t}\right)}\end{array}$$ 
+$$
+\begin{array}{l}{\eta(\pi)=\mathbb{E}_{s_{0}, a_{0}, \ldots}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}\right)\right], \text { where }} \\ {s_{0} \sim \rho_{0}\left(s_{0}\right), a_{t} \sim \pi\left(a_{t} | s_{t}\right), s_{t+1} \sim P\left(s_{t+1} | s_{t}, a_{t}\right)}\end{array}
+$$ 
 
-$$\rho_{\pi}(s)=P\left(s_{0}=s\right)+\gamma P\left(s_{1}=s\right)+\gamma^{2} P\left(s_{2}=s\right)+\dots$$ 
+$$
+\rho_{\pi}(s)=P\left(s_{0}=s\right)+\gamma P\left(s_{1}=s\right)+\gamma^{2} P\left(s_{2}=s\right)+\dots
+$$ 
 
-其中，\(A\) 是优势函数，即该动作相对于平均而言有多少额外reward。\(\eta_\pi\) 是期望的折扣reward。\(\rho_\pi\) 是加了折扣的state访问频率。
+其中，$A$ 是优势函数，即该动作相对于平均而言有多少额外reward。$\eta_\pi$ 是期望的折扣reward。$\rho_\pi$ 是加了折扣的state访问频率。
 
 ### 从记号出发
 
